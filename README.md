@@ -5,7 +5,7 @@ My two cents about using tmux
 ```bash
 cd ywd  # your-work-directory
 git clone https://github.com/xijiang/tmux
-ln -s tmux/tmux.conf ~/.tmux.conf
+cp tmux/tmux.conf ~/.tmux.conf
 mkdir -p ~/bin && cp tmux/my-tmux-session.sh ~/bin && chmod u+x ~/bin/my-tmux-session.sh
 alias mux=~/bin/my-tmux-session.sh
 ```

@@ -9,13 +9,13 @@ if [[ -z "$TMUX" ]] ;then
 	     split-window -h -l130 \; \
 	     split-window -v -l15 \; \
 	     split-window -h \; \
-	     send-keys 'source ~/R/pvenv/bin/activate' C-m \; \
-	     new-window -n secondary \; \
+	     send-keys 'grep todo README.md' C-m \; \
+	     new-window -c $snd -n secondary \; \
 	     split-window -c $snd -h -l130 \; \
 	     split-window -c $snd -v -l15\; \
 	     split-window -c $snd -h \; \
-	     send-keys 'grep todo todo.log' C-m \; \
-	     new-window -n servers \; \
+	     send-keys 'grep todo README.md' C-m \; \
+	     new-window -c ~ -n servers \; \
 	     split-window -c ~ -h -p 90 \; \
 	     split-window -c ~ -h -p 90 \; \
 	     split-window -c ~ -h -p 90 \; \
@@ -24,6 +24,8 @@ if [[ -z "$TMUX" ]] ;then
 	     split-window -c ~ -h -p 90 \; \
 	     split-window -c ~ -h -p 90 \; \
 	     split-window -c ~ -h -p 90 \; \
+	     send-keys 'source ~/R/pvenv/bin/activate' C-m \; \
+	     send-keys 'jupyter-notebook' C-m \; \
 	     select-layout tile
     else
         tmux attach-session -t "$ID" # if available attach to it

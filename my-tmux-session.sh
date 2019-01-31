@@ -7,12 +7,14 @@ if [[ -z "$TMUX" ]] ;then
 	
         tmux new-session -s default -n primary -c $fst \; \
 	     split-window -h -l130 \; \
-	     split-window -v -l15 \; \
+	     split-window -v -l64 \; \
+	     last-pane \; \
 	     split-window -h \; \
 	     send-keys 'grep todo README.md' C-m \; \
 	     new-window -c $snd -n secondary \; \
 	     split-window -c $snd -h -l130 \; \
-	     split-window -c $snd -v -l15\; \
+	     split-window -c $snd -v -l64 \; \
+	     last-pane \; \
 	     split-window -c $snd -h \; \
 	     send-keys 'grep todo README.md' C-m \; \
 	     new-window -c ~ -n servers \; \

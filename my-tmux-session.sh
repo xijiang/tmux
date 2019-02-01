@@ -2,21 +2,21 @@
 if [[ -z "$TMUX" ]] ;then
     ID="$( tmux ls | grep -vm1 attached | cut -d: -f1 )" # get the id of a deattached session
     if [[ -z "$ID" ]] ;then # if not available create a new one
-	fst=~/priorities/nsg
-	snd=~/priorities/crayfish
+	fst=~/priorities/prj-1
+	snd=~/priorities/prj-2
 	
         tmux new-session -s default -n primary -c $fst \; \
 	     split-window -h -l130 \; \
 	     split-window -v -l50 \; \
 	     last-pane \; \
 	     split-window -h \; \
-	     send-keys 'grep todo README.md' C-m \; \
+	     send-keys 'task project:prj-1' C-m \; \
 	     new-window -c $snd -n secondary \; \
 	     split-window -c $snd -h -l130 \; \
 	     split-window -c $snd -v -l50 \; \
 	     last-pane \; \
 	     split-window -c $snd -h \; \
-	     send-keys 'grep todo README.md' C-m \; \
+	     send-keys 'task project:prj-2' C-m \; \
 	     new-window -c ~ -n servers \; \
 	     split-window -c ~ -h -p 90 \; \
 	     split-window -c ~ -h -p 90 \; \

@@ -9,7 +9,12 @@ cp tmux/tmux.conf ~/.tmux.conf
 mkdir -p ~/bin \
   && cp tmux/my-tmux-session.sh ~/bin \
   && chmod u+x ~/bin/my-tmux-session.sh
+
+# some shortcut to tmux commands
 alias mux=~/bin/my-tmux-session.sh  # can put this into .bashrc
+alias pane='tmux select-pane -t'    # to switch pane with keyboard
+alias zoom='tmux resize-pane -Z'    # to zoom and restore current pane
+
 # One can modify my-tmux-session.sh
 # for own default primary and secondory working directories
 ```
